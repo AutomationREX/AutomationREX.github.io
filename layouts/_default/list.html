@@ -40,12 +40,6 @@
 
 {{- $pages := union .RegularPages .Sections }}
 
-{{- /* Filter by current language for taxonomy pages */ -}}
-{{- if or (eq .Kind "term") (eq .Kind "taxonomy") }}
-{{- $currentLang := .Language.Lang }}
-{{- $pages = where $pages "Language.Lang" $currentLang }}
-{{- end }}
-
 {{- if .IsHome }}
 {{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
 {{- $pages = where $pages "Params.hiddenInHomeList" "!=" "true"  }}
