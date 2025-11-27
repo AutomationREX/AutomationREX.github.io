@@ -1,6 +1,6 @@
 baseURL = 'https://AutomationREX.github.io/'
 defaultContentLanguage = 'fr'
-defaultContentLanguageInSubdir = false
+defaultContentLanguageInSubdir = true
 theme = 'PaperMod'
 disableKinds = []
 
@@ -37,83 +37,31 @@ disableKinds = []
     [[languages.fr.menu.main]]
       identifier = "posts"
       name = "Articles"
-      url = "/posts/"
+      url = "/fr/posts/"
       weight = 10
 
     [[languages.fr.menu.main]]
       identifier = "categories"
       name = "Catégories"
-      url = "/categories/"
+      url = "/fr/categories/"
       weight = 20
 
     [[languages.fr.menu.main]]
       identifier = "tags"
       name = "Tags"
-      url = "/tags/"
+      url = "/fr/tags/"
       weight = 30
 
     [[languages.fr.menu.main]]
       identifier = "about"
       name = "À propos"
-      url = "/about/"
+      url = "/fr/about/"
       weight = 40
 
     [[languages.fr.menu.main]]
       identifier = "search"
       name = "Recherche"
-      url = "/search/"
-      weight = 50
-
-  [languages.en]
-    languageCode = 'en-US'
-    languageName = 'English'
-    title = "iT-REXpert - The IT Dinosaur"
-    weight = 2
-
-    [languages.en.params]
-      description = "Technical blog from a Windows system administrator with 25 years of experience. PowerShell, Ansible, Terraform, DevOps and automation."
-
-      [languages.en.params.homeInfoParams]
-        Title = "Welcome to iT-REXpert 🦖"
-        Content = """
-        **The IT Dinosaur** - 25 years of experience in Windows system administration
-
-        You'll find technical articles about:
-        - PowerShell & automation
-        - Ansible & configuration management
-        - Terraform & Infrastructure as Code
-        - DevOps & best practices
-        - Windows Server administration
-        """
-
-    [[languages.en.menu.main]]
-      identifier = "posts"
-      name = "Posts"
-      url = "/en/posts/"
-      weight = 10
-
-    [[languages.en.menu.main]]
-      identifier = "categories"
-      name = "Categories"
-      url = "/en/categories/"
-      weight = 20
-
-    [[languages.en.menu.main]]
-      identifier = "tags"
-      name = "Tags"
-      url = "/en/tags/"
-      weight = 30
-
-    [[languages.en.menu.main]]
-      identifier = "about"
-      name = "About"
-      url = "/en/about/"
-      weight = 40
-
-    [[languages.en.menu.main]]
-      identifier = "search"
-      name = "Search"
-      url = "/en/search/"
+      url = "/fr/search/"
       weight = 50
 
 [params]
