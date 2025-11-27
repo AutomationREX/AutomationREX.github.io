@@ -2,6 +2,11 @@ baseURL = 'https://AutomationREX.github.io/'
 defaultContentLanguage = 'fr'
 defaultContentLanguageInSubdir = false
 theme = 'PaperMod'
+disableKinds = []
+
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'
 
 [pagination]
   pagerSize = 10
