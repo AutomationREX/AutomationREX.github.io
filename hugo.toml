@@ -1,13 +1,117 @@
 baseURL = 'https://AutomationREX.github.io/'
-languageCode = 'fr-FR'
-title = "iT-REXpert - Le dino de l'IT"
+defaultContentLanguage = 'fr'
+defaultContentLanguageInSubdir = false
 theme = 'PaperMod'
 
 [pagination]
   pagerSize = 10
 
+[languages]
+  [languages.fr]
+    languageCode = 'fr-FR'
+    languageName = 'Français'
+    title = "iT-REXpert - Le dino de l'IT"
+    weight = 1
+
+    [languages.fr.params]
+      description = "Blog technique d'un admin système Windows avec 25 ans d'expérience. PowerShell, Ansible, Terraform, DevOps et automatisation."
+
+      [languages.fr.params.homeInfoParams]
+        Title = "Bienvenue sur iT-REXpert 🦖"
+        Content = """
+        **Le dino de l'IT** - 25 ans d'expérience en administration système Windows
+
+        Vous trouverez ici des articles techniques sur :
+        - PowerShell & automatisation
+        - Ansible & configuration management
+        - Terraform & Infrastructure as Code
+        - DevOps & bonnes pratiques
+        - Windows Server administration
+        """
+
+    [[languages.fr.menu.main]]
+      identifier = "posts"
+      name = "Articles"
+      url = "/posts/"
+      weight = 10
+
+    [[languages.fr.menu.main]]
+      identifier = "categories"
+      name = "Catégories"
+      url = "/categories/"
+      weight = 20
+
+    [[languages.fr.menu.main]]
+      identifier = "tags"
+      name = "Tags"
+      url = "/tags/"
+      weight = 30
+
+    [[languages.fr.menu.main]]
+      identifier = "about"
+      name = "À propos"
+      url = "/about/"
+      weight = 40
+
+    [[languages.fr.menu.main]]
+      identifier = "search"
+      name = "Recherche"
+      url = "/search/"
+      weight = 50
+
+  [languages.en]
+    languageCode = 'en-US'
+    languageName = 'English'
+    title = "iT-REXpert - The IT Dinosaur"
+    weight = 2
+
+    [languages.en.params]
+      description = "Technical blog from a Windows system administrator with 25 years of experience. PowerShell, Ansible, Terraform, DevOps and automation."
+
+      [languages.en.params.homeInfoParams]
+        Title = "Welcome to iT-REXpert 🦖"
+        Content = """
+        **The IT Dinosaur** - 25 years of experience in Windows system administration
+
+        You'll find technical articles about:
+        - PowerShell & automation
+        - Ansible & configuration management
+        - Terraform & Infrastructure as Code
+        - DevOps & best practices
+        - Windows Server administration
+        """
+
+    [[languages.en.menu.main]]
+      identifier = "posts"
+      name = "Posts"
+      url = "/en/posts/"
+      weight = 10
+
+    [[languages.en.menu.main]]
+      identifier = "categories"
+      name = "Categories"
+      url = "/en/categories/"
+      weight = 20
+
+    [[languages.en.menu.main]]
+      identifier = "tags"
+      name = "Tags"
+      url = "/en/tags/"
+      weight = 30
+
+    [[languages.en.menu.main]]
+      identifier = "about"
+      name = "About"
+      url = "/en/about/"
+      weight = 40
+
+    [[languages.en.menu.main]]
+      identifier = "search"
+      name = "Search"
+      url = "/en/search/"
+      weight = 50
+
 [params]
-  description = "Blog technique d'un admin système Windows avec 25 ans d'expérience. PowerShell, Ansible, Terraform, DevOps et automatisation."
   author = "iT-REXpert"
   ShowReadingTime = true
   ShowShareButtons = true
@@ -25,19 +129,6 @@ theme = 'PaperMod'
   showtoc = true
   tocopen = false
 
-  [params.homeInfoParams]
-    Title = "Bienvenue sur iT-REXpert 🦖"
-    Content = """
-    **Le dino de l'IT** - 25 ans d'expérience en administration système Windows
-
-    Vous trouverez ici des articles techniques sur :
-    - PowerShell & automatisation
-    - Ansible & configuration management
-    - Terraform & Infrastructure as Code
-    - DevOps & bonnes pratiques
-    - Windows Server administration
-    """
-
   [[params.socialIcons]]
     name = "github"
     url = "https://github.com/AutomationREX"
@@ -45,37 +136,6 @@ theme = 'PaperMod'
   [[params.socialIcons]]
     name = "rss"
     url = "/index.xml"
-
-[menu]
-  [[menu.main]]
-    identifier = "posts"
-    name = "Articles"
-    url = "/posts/"
-    weight = 10
-
-  [[menu.main]]
-    identifier = "categories"
-    name = "Catégories"
-    url = "/categories/"
-    weight = 20
-
-  [[menu.main]]
-    identifier = "tags"
-    name = "Tags"
-    url = "/tags/"
-    weight = 30
-
-  [[menu.main]]
-    identifier = "about"
-    name = "À propos"
-    url = "/about/"
-    weight = 40
-
-  [[menu.main]]
-    identifier = "search"
-    name = "Recherche"
-    url = "/search/"
-    weight = 50
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]

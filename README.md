@@ -2,6 +2,8 @@
 
 Blog technique d'un administrateur système Windows avec 25 ans d'expérience.
 
+**Available in:** 🇫🇷 Français | 🇬🇧 English
+
 ## À propos
 
 Ce site partage des articles techniques sur :
@@ -10,6 +12,12 @@ Ce site partage des articles techniques sur :
 - Terraform & Infrastructure as Code
 - DevOps & bonnes pratiques
 - Windows Server administration
+
+### Multilingual Support
+
+Le blog est entièrement disponible en français et en anglais. Consultez [MULTILINGUAL.md](MULTILINGUAL.md) pour plus d'informations.
+
+The blog is fully available in French and English. See [MULTILINGUAL.md](MULTILINGUAL.md) for more information.
 
 ## Développement local
 
@@ -39,10 +47,14 @@ Le site sera accessible sur [http://localhost:1313](http://localhost:1313)
 ### Créer un nouvel article
 
 ```bash
+# En français
 hugo new posts/mon-article.md
+
+# En anglais
+hugo new en/posts/my-article.md
 ```
 
-Éditez ensuite le fichier dans `content/posts/mon-article.md`
+Éditez ensuite le fichier dans `content/posts/mon-article.md` ou `content/en/posts/my-article.md`
 
 ## Structure du projet
 
@@ -51,12 +63,15 @@ hugo new posts/mon-article.md
 ├── .github/
 │   └── workflows/          # GitHub Actions pour le déploiement
 ├── content/
-│   ├── posts/              # Articles de blog
+│   ├── posts/              # Articles de blog (français)
+│   ├── en/
+│   │   └── posts/          # Articles de blog (anglais)
 │   ├── about.md            # Page à propos
 │   └── search.md           # Page de recherche
 ├── themes/
 │   └── PaperMod/           # Thème Hugo
-├── hugo.toml               # Configuration Hugo
+├── hugo.toml               # Configuration Hugo (multilingue)
+├── MULTILINGUAL.md         # Guide multilingue
 └── README.md
 ```
 
