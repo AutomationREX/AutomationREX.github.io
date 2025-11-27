@@ -1,0 +1,92 @@
+baseURL = 'https://AutomationREX.github.io/'
+languageCode = 'fr-FR'
+title = "iT-REXpert - Le dino de l'IT"
+theme = 'PaperMod'
+
+[pagination]
+  pagerSize = 10
+
+[params]
+  description = "Blog technique d'un admin système Windows avec 25 ans d'expérience. PowerShell, Ansible, Terraform, DevOps et automatisation."
+  author = "iT-REXpert"
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = true
+  ShowRssButtonInSectionTermList = true
+  UseHugoToc = true
+  disableSpecial1stPost = false
+  disableScrollToTop = false
+  comments = false
+  hidemeta = false
+  hideSummary = false
+  showtoc = true
+  tocopen = false
+
+  [params.homeInfoParams]
+    Title = "Bienvenue sur iT-REXpert 🦖"
+    Content = """
+    **Le dino de l'IT** - 25 ans d'expérience en administration système Windows
+
+    Vous trouverez ici des articles techniques sur :
+    - PowerShell & automatisation
+    - Ansible & configuration management
+    - Terraform & Infrastructure as Code
+    - DevOps & bonnes pratiques
+    - Windows Server administration
+    """
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/AutomationREX"
+
+  [[params.socialIcons]]
+    name = "rss"
+    url = "/index.xml"
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "Articles"
+    url = "/posts/"
+    weight = 10
+
+  [[menu.main]]
+    identifier = "categories"
+    name = "Catégories"
+    url = "/categories/"
+    weight = 20
+
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+    weight = 30
+
+  [[menu.main]]
+    identifier = "about"
+    name = "À propos"
+    url = "/about/"
+    weight = 40
+
+  [[menu.main]]
+    identifier = "search"
+    name = "Recherche"
+    url = "/search/"
+    weight = 50
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[markup]
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = false
+    style = "monokai"
+    tabWidth = 4
