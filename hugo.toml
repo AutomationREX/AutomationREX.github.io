@@ -1,124 +1,145 @@
 baseURL = 'https://AutomationREX.github.io/'
 languageCode = 'fr-fr'
 title = "iT-REXpert - Le dino de l'IT"
-theme = 'PaperMod'
+theme = 'hugo-theme-stack'
 
-enableRobotsTXT = true
-buildDrafts = false
-buildFuture = false
-buildExpired = false
-enableEmoji = true
+# Change it to your Disqus shortname before using
+disqusShortname = ""
 
-[params]
-env = "production"
+# GA Tracking ID
+googleAnalytics = ""
+
+# Theme i18n support
+# Available values: ar, bn, ca, de, el, en, es, fr, hu, id, it, ja, ko, nl, pt-br, th, uk, zh-cn, zh-hk, zh-tw
+DefaultContentLanguage = "fr"
+
+# Set hasCJKLanguage to true if DefaultContentLanguage is in [zh-cn ja ko]
+hasCJKLanguage = false
+
+# Needed for multilingual support
+[languages]
+[languages.fr]
+languageName = "Français"
 title = "iT-REXpert"
-description = "Le dino de l'IT - Blog d'un administrateur système avec +25 ans d'expérience en automation, PowerShell, Ansible, Terraform et DevOps"
-keywords = ["PowerShell", "DevOps", "Ansible", "Terraform", "Windows", "Automation", "IT"]
-author = "iT-REXpert"
-images = ["/images/avatar.png"]
-DateFormat = "2 January 2006"
-defaultTheme = "auto"
-disableThemeToggle = false
+description = "Le dino de l'IT - Blog technique sur l'administration système, l'automatisation et le DevOps"
+weight = 1
 
-ShowReadingTime = true
-ShowShareButtons = true
-ShowPostNavLinks = true
-ShowBreadCrumbs = true
-ShowCodeCopyButtons = true
-ShowWordCount = true
-ShowRssButtonInSectionTermList = true
-UseHugoToc = true
-disableSpecial1stPost = false
-disableScrollToTop = false
-comments = true
-hidemeta = false
-hideSummary = false
-showtoc = true
-tocopen = true
+[languages.fr.params]
+description = "Blog d'un administrateur système avec +25 ans d'expérience en PowerShell, Ansible, Terraform et DevOps"
 
-[params.profileMode]
-enabled = true
-title = "iT-REXpert 🦖"
-subtitle = "Le dino de l'IT"
-imageUrl = "/images/rex-logo.png"
-imageWidth = 120
-imageHeight = 120
-imageTitle = "iT-REXpert Logo"
-
-[[params.profileMode.buttons]]
-name = "Articles"
-url = "/posts"
-
-[[params.profileMode.buttons]]
-name = "Tags"
-url = "/tags"
-
-[[params.profileMode.buttons]]
-name = "À propos"
-url = "/about"
-
-[params.homeInfoParams]
-Title = "Bienvenue sur iT-REXpert 🦖"
-Content = "Le dino de l'IT - Plus de 25 ans d'expérience en administration système Windows, automatisation avec PowerShell, Ansible, Terraform et toutes les techniques DevOps"
-
-[[params.socialIcons]]
-name = "github"
+# Social media links
+[[languages.fr.params.social]]
+identifier = "github"
+name = "GitHub"
 url = "https://github.com/AutomationREX"
 
-[[params.socialIcons]]
-name = "linkedin"
+[[languages.fr.params.social]]
+identifier = "linkedin"
+name = "LinkedIn"
 url = "https://linkedin.com"
 
-[[params.socialIcons]]
-name = "rss"
-url = "/index.xml"
-
-[params.cover]
-hidden = false
-hiddenInList = false
-hiddenInSingle = false
-
-[params.editPost]
-URL = "https://github.com/AutomationREX/AutomationREX.github.io/tree/main/content"
-Text = "Suggérer une modification"
-appendFilePath = true
-
-[params.fuseOpts]
-isCaseSensitive = false
-shouldSort = true
-location = 0
-distance = 1000
-threshold = 0.4
-minMatchCharLength = 0
-keys = ["title", "permalink", "summary", "content"]
-
-[[menu.main]]
-identifier = "posts"
-name = "Articles"
-url = "/posts/"
-weight = 10
-
-[[menu.main]]
-identifier = "tags"
-name = "Tags"
-url = "/tags/"
-weight = 20
-
-[[menu.main]]
-identifier = "about"
-name = "À propos"
-url = "/about/"
-weight = 30
-
-[[menu.main]]
-identifier = "search"
-name = "Recherche"
-url = "/search/"
-weight = 40
+[services]
+[services.rss]
+limit = 10
 
 [outputs]
 home = ["HTML", "RSS", "JSON"]
 
+[permalinks]
+post = "/p/:slug/"
+page = "/:slug/"
+
+[params]
+mainSections = ["posts"]
+featuredImageField = "image"
+rssFullContent = true
+favicon = "/images/avatar.png"
+
+[params.footer]
+since = 2025
+customText = "🦖 Le dino de l'IT - L'expérience compte !"
+
+[params.dateFormat]
+published = "2 January 2006"
+lastUpdated = "2 January 2006 15:04 MST"
+
+[params.sidebar]
+emoji = "🦖"
+subtitle = "Le dino de l'IT - 25+ ans d'expérience en administration système, automatisation et DevOps"
+
+[params.sidebar.avatar]
+enabled = true
+local = true
+src = "img/avatar.png"
+
+[params.article]
+math = false
+readingTime = true
+license.enabled = false
+
+[params.comments]
+enabled = false
+
+[[params.widgets.homepage]]
+type = "search"
+
+[[params.widgets.homepage]]
+type = "archives"
+[params.widgets.homepage.params]
+limit = 5
+
+[[params.widgets.homepage]]
+type = "tag-cloud"
+[params.widgets.homepage.params]
+limit = 10
+
+# TOC widget removed from sidebar - now displayed in article content
+
+[params.opengraph.twitter]
+card = "summary_large_image"
+
+[params.defaultImage.opengraph]
+enabled = false
+
+[params.colorScheme]
+toggle = true
+default = "dark"
+
+[params.imageProcessing.cover]
+enabled = true
+
+[params.imageProcessing.content]
+enabled = true
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[markup.tableOfContents]
+endLevel = 4
+ordered = true
+startLevel = 2
+
 [markup.highlight]
 noClasses = false
+codeFences = true
+guessSyntax = true
+lineNoStart = 1
+lineNos = true
+lineNumbersInTable = true
+tabWidth = 4
 style = "monokai"
+
+# Menu items are defined in content files front matter
+
+[related]
+includeNewer = true
+threshold = 60
+toLower = false
+
+[[related.indices]]
+name = "tags"
+weight = 100
+
+[[related.indices]]
+name = "categories"
+weight = 200

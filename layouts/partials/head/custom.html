@@ -1,0 +1,8 @@
+{{- /* Custom head additions */ -}}
+
+{{- /* Load custom JavaScript */ -}}
+{{ $customJS := resources.Get "js/custom.js" }}
+{{ if $customJS }}
+    {{ $customJS = $customJS | minify | fingerprint }}
+    <script defer src="{{ $customJS.RelPermalink }}" integrity="{{ $customJS.Data.Integrity }}"></script>
+{{ end }}

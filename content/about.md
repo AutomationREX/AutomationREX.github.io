@@ -1,8 +1,12 @@
 ---
 title: "À propos"
 date: 2025-11-27
-draft: false
-url: "/about/"
+slug: "about"
+menu:
+    main:
+        weight: 2
+        params:
+            icon: user
 ---
 
 # iT-REXpert 🦖 - Le dino de l'IT

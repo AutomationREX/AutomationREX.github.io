@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Jurassic Park inspired T-Rex logo -->
+  <defs>
+    <linearGradient id="jurassicGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2e7d32;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1b5e20;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="jurassicOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6f00;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d32f2f;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="95" fill="url(#jurassicGreen)" stroke="#ffd600" stroke-width="4"/>
+
+  <!-- T-Rex silhouette (simplified) -->
+  <g fill="url(#jurassicOrange)">
+    <!-- Head -->
+    <ellipse cx="150" cy="60" rx="25" ry="30"/>
+    <!-- Eye -->
+    <circle cx="160" cy="55" r="4" fill="#ffd600"/>
+    <!-- Jaw -->
+    <path d="M 175 60 L 180 70 L 170 72 L 165 68 Z" fill="#d32f2f"/>
+
+    <!-- Body -->
+    <ellipse cx="110" cy="90" rx="35" ry="40"/>
+
+    <!-- Tail -->
+    <path d="M 80 80 Q 50 75, 30 60 Q 25 55, 35 50 Q 55 70, 85 75 Z" fill="url(#jurassicGreen)"/>
+
+    <!-- Legs -->
+    <rect x="95" y="120" width="15" height="40" rx="5" fill="#1b5e20"/>
+    <rect x="115" y="120" width="15" height="40" rx="5" fill="#1b5e20"/>
+
+    <!-- Feet -->
+    <ellipse cx="102" cy="162" rx="12" ry="8" fill="#5d4037"/>
+    <ellipse cx="122" cy="162" rx="12" ry="8" fill="#5d4037"/>
+
+    <!-- Arms (tiny!) -->
+    <rect x="130" y="85" width="8" height="15" rx="3" fill="#ff6f00"/>
+    <rect x="120" y="85" width="8" height="15" rx="3" fill="#ff6f00"/>
+  </g>
+
+  <!-- Text: REX -->
+  <text x="100" y="190" font-family="'Bebas Neue', 'Arial Black', sans-serif" font-size="28" font-weight="bold" fill="#ffd600" text-anchor="middle" stroke="#d32f2f" stroke-width="1">
+    iT-REX
+  </text>
+</svg>

@@ -1,0 +1,257 @@
+/* Collapsible Left Sidebar */
+
+.left-sidebar {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.sidebar-toggle-btn {
+    position: fixed;
+    top: 20px;
+    left: calc(var(--sidebar-width, 300px) - 15px);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--card-background);
+    border: 2px solid var(--accent-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    box-shadow: var(--shadow-l1);
+    transition: left 0.3s ease, background 0.3s ease, transform 0.2s ease;
+}
+
+.sidebar-toggle-btn:hover {
+    background: var(--accent-color);
+    transform: scale(1.1);
+}
+
+.sidebar-toggle-btn svg {
+    transition: transform 0.3s ease;
+    color: var(--accent-color);
+}
+
+.sidebar-toggle-btn:hover svg {
+    color: var(--accent-color-text);
+}
+
+/* Collapsed state */
+.left-sidebar.collapsed {
+    width: 0 !important;
+    min-width: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden;
+}
+
+.left-sidebar.collapsed ~ * .sidebar-toggle-btn,
+body.sidebar-collapsed .sidebar-toggle-btn {
+    left: 15px;
+}
+
+.left-sidebar.collapsed .sidebar-inner,
+.left-sidebar.collapsed .widget {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Adjust main content when sidebar is collapsed */
+.main-container {
+    transition: all 0.3s ease;
+}
+
+/* Mobile: hide toggle button */
+@media (max-width: 1024px) {
+    .sidebar-toggle-btn {
+        display: none;
+    }
+}
+
+/* Custom styles for in-content TOC (Table of Contents) */
+
+/* TOC wrapper - fixed positioning to stay on screen */
+.article-toc-wrapper {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 320px;
+    max-width: calc(100vw - 40px);
+    z-index: 500;
+    margin: 0;
+}
+
+/* TOC container */
+.article-toc {
+    background: var(--card-background);
+    border: 2px solid var(--card-separator-color);
+    border-radius: 12px;
+    padding: 0;
+    box-shadow: var(--shadow-l2);
+    max-height: calc(100vh - 100px);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* TOC summary (clickable header) */
+.article-toc summary {
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    padding: 1.25rem 1.5rem;
+    user-select: none;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--card-background);
+    border-radius: 10px 10px 0 0;
+    transition: background 0.3s ease;
+}
+
+.article-toc summary:hover {
+    background: var(--card-background-selected);
+}
+
+.article-toc summary::-webkit-details-marker {
+    display: none;
+}
+
+.article-toc summary svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+/* TOC content area */
+.article-toc .toc-content {
+    padding: 1rem 1.5rem 1.5rem;
+    max-height: 60vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Smooth scrollbar */
+.article-toc .toc-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.article-toc .toc-content::-webkit-scrollbar-track {
+    background: var(--card-background);
+}
+
+.article-toc .toc-content::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 10px;
+}
+
+.article-toc .toc-content::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color-darker);
+}
+
+/* TOC navigation styles */
+.article-toc nav ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.article-toc nav ul li {
+    margin: 0.4rem 0;
+    line-height: 1.6;
+}
+
+.article-toc nav ul ul {
+    padding-left: 1.5rem;
+    margin-top: 0.3rem;
+    border-left: 2px solid var(--card-separator-color);
+}
+
+.article-toc nav ul ul ul {
+    padding-left: 1.2rem;
+    opacity: 0.9;
+}
+
+/* TOC links */
+.article-toc nav a {
+    color: var(--body-text-color);
+    text-decoration: none;
+    display: block;
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+    position: relative;
+}
+
+.article-toc nav a:hover {
+    background: var(--accent-color-darker);
+    color: var(--accent-color-text);
+    transform: translateX(5px);
+    padding-left: 1rem;
+}
+
+.article-toc nav a:hover::before {
+    content: '▸';
+    position: absolute;
+    left: 0.25rem;
+    color: var(--accent-color);
+}
+
+/* Active link highlighting */
+.article-toc nav a[aria-current="true"],
+.article-toc nav a.active {
+    background: var(--accent-color);
+    color: var(--accent-color-text);
+    font-weight: 600;
+}
+
+/* When closed - collapse the content */
+.article-toc:not([open]) {
+    max-height: 60px;
+}
+
+.article-toc:not([open]) .toc-content {
+    display: none;
+}
+
+/* Responsive: adjust for mobile and tablet */
+@media (max-width: 1024px) {
+    .article-toc-wrapper {
+        position: relative;
+        top: 0;
+        right: 0;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 0 2rem 0;
+    }
+
+    .article-toc .toc-content {
+        max-height: 50vh;
+    }
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Hide the default sidebar TOC widget on article pages */
+.article-page aside.sidebar .widget[data-type="toc"] {
+    display: none !important;
+}
+
+/* Alternative: if you want to keep sidebar TOC and just add in-content */
+/* Remove the line above if you want both TOCs */
+
+/* Center footer content */
+.site-footer {
+    text-align: center;
+}
+
+.site-footer .copyright,
+.site-footer .powerby {
+    text-align: center;
+}
